@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sehyogini_frontned/Screens/chatbot/chatScreen.dart';
-import 'package:sehyogini_frontned/Screens/chatbot/chatbotScreen.dart';
 
 class VoicesScreen extends StatefulWidget {
   const VoicesScreen({super.key});
