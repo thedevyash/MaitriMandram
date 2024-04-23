@@ -86,7 +86,7 @@ class _AccountTypeState extends State<AccountType> {
                                   ),
                                 ),
                                 onPressed: () {
-                                  controller.acctype = "recruiter";
+                                  controller.acctype = "buyer";
                                   Get.to(SignupScreen());
                                 },
                                 child: Container(
@@ -97,7 +97,7 @@ class _AccountTypeState extends State<AccountType> {
                                         "assets/ngo.png",
                                         height: 80,
                                       ),
-                                      Text("Recruiter",
+                                      Text("Buyer",
                                           textAlign: TextAlign.center,
                                           style: GoogleFonts.poppins(
                                               color: Colors.white,
@@ -133,7 +133,7 @@ class _AccountTypeState extends State<AccountType> {
                                         "assets/single.png",
                                         height: 80,
                                       ),
-                                      Text("Single Mother",
+                                      Text("Mother",
                                           textAlign: TextAlign.center,
                                           style: GoogleFonts.poppins(
                                               color: Colors.white,

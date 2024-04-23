@@ -25,100 +25,36 @@ class _HomeScreenState extends State<HomeScreen> {
   var scaffoldKey = GlobalKey<ScaffoldState>();
   bottomController navbarController = Get.put(bottomController());
 
-  _launchURL() async {
-    final Uri url = Uri.parse('https://github.com/thedevyash');
-    if (!await launchUrl(url)) {
-      throw Exception('Could not launch $url');
-    }
-  }
-
-  final LocaleController localeController = Get.put(LocaleController());
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Colors.white,
-          key: scaffoldKey,
-          drawer: Drawer(
-            backgroundColor: Colors.white,
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    constraints: BoxConstraints(minHeight: 300, maxHeight: 300),
-                    decoration: BoxDecoration(
-                        color: colors.purp,
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.elliptical(20, 20),
-                            bottomRight: Radius.circular(30))),
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(kToolbarHeight),
+            child: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Version 1.0",
-                            style: GoogleFonts.poppins(fontSize: 23)),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        GestureDetector(
-                          onTap: _launchURL,
-                          child: Text("Github",
-                              style: GoogleFonts.poppins(
-                                  fontSize: 23, color: colors.purp)),
-                        ),
-                        TextButton(
-                            onPressed: () async {
-                              final SharedPreferences prefs = await _prefs;
-                              prefs.setBool("isLoggedIn", false);
-                              prefs.setString("token", "");
-                              prefs.setString("name", "");
-                              prefs.setBool("isRecruiter", false);
-                              Get.offAll(SignInScreen());
-                            },
-                            child: Text("Log Out")),
-                        Obx(
-                          () => DropdownButton<String>(
-                            value: localeController.locale.value,
-                            items: [
-                              DropdownMenuItem(
-                                  child: Text("English"), value: "en"),
-                              DropdownMenuItem(
-                                  child: Text("Tamil"), value: "ta")
-                            ],
-                            onChanged: (String? newValue) {
-                              localeController.changeLocale(newValue!);
-                            },
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ]),
-          ),
-          appBar: AppBar(
-            centerTitle: true,
-            title:
-                Text("MaitriMandram", style: GoogleFonts.poppins(fontSize: 25)),
-            leading: IconButton(
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.black,
-                size: 30,
+                ],
               ),
-              onPressed: () => scaffoldKey.currentState?.openDrawer(),
+              child: AppBar(
+                centerTitle: true,
+                title: Text("MaitriMandram",
+                    style: GoogleFonts.poppins(fontSize: 25)),
+                actions: [
+                  IconButton(
+                      onPressed: () {
+                        Get.to(SettingsScreen());
+                      },
+                      icon: Icon(Icons.notifications))
+                ],
+              ),
             ),
-            actions: [
-              IconButton(
-                  onPressed: () {
-                    Get.to(SettingsScreen());
-                  },
-                  icon: Icon(Icons.settings))
-            ],
           ),
           body: Obx(() => pages[navbarController.currentindex.value]),
           bottomNavigationBar: Obx(() => CurvedNavigationBar(
@@ -143,6 +79,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     Icon(
                       color: Colors.white,
                       CupertinoIcons.briefcase_fill,
+                      size: 30,
+                    ),
+                    Icon(
+                      color: Colors.white,
+                      Icons.shopping_cart,
                       size: 30,
                     ),
                     Icon(

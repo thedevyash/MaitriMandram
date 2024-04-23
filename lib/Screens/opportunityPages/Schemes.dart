@@ -136,7 +136,7 @@ class _SchemesState extends State<Schemes> {
                                               left: 8,
                                               right: 8),
                                           fixedSize: Size(100, 24),
-                                          backgroundColor: Colors.red),
+                                          backgroundColor: Color(0xff1C53A3)),
                                       onPressed: () => _launchURL(
                                           controller.myscheme[index].url!),
                                       child: Row(
@@ -164,7 +164,7 @@ class _SchemesState extends State<Schemes> {
                                               left: 8,
                                               right: 8),
                                           fixedSize: Size(100, 24),
-                                          backgroundColor: Colors.red),
+                                          backgroundColor: Color(0xff1C53A3)),
                                       onPressed: () => _launchURLPhone(
                                           "tel:${controller.myscheme[index].helpline!}"),
                                       child: Row(

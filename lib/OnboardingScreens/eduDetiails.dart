@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sehyogini_frontned/Screens/buyerScreens/homePageBuyer.dart';
 import 'package:sehyogini_frontned/Screens/homeScreen.dart';
 import 'package:sehyogini_frontned/controllers/signUp_controller.dart';
 import 'package:sehyogini_frontned/utils/constants.dart';
@@ -241,7 +242,10 @@ class _EducDetailsScreenState extends State<EducDetailsScreen> {
                                     var res = await controller.signup(
                                         context, widget.phonePref);
                                     if (res) {
-                                      Get.to(HomeScreen());
+                                      if (controller.acctype == "user")
+                                        Get.to(HomeScreen());
+                                      else
+                                        Get.to(HomePageBuyer());
                                     } else {
                                       setState(() {});
                                     }

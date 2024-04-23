@@ -5,6 +5,7 @@ import 'package:sehyogini_frontned/OnboardingScreens/accountType.dart';
 import 'package:sehyogini_frontned/OnboardingScreens/signIn.dart';
 import 'package:sehyogini_frontned/OnboardingScreens/signup.dart';
 import 'package:sehyogini_frontned/OnboardingScreens/splashScreen.dart';
+import 'package:sehyogini_frontned/Screens/Marketplace/market.dart';
 import 'package:sehyogini_frontned/Screens/pages/opportunity.dart';
 import 'package:sehyogini_frontned/onboarding.dart';
 import 'package:sehyogini_frontned/utils/constants.dart';

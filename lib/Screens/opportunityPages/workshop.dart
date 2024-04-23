@@ -147,7 +147,7 @@ class _WorkshopScreenState extends State<WorkshopScreen> {
                                               left: 8,
                                               right: 8),
                                           fixedSize: Size(100, 24),
-                                          backgroundColor: Colors.red),
+                                          backgroundColor: Color(0xff1C53A3)),
                                       onPressed: () => _launchURL(controller
                                           .myworkshop[index].location!),
                                       child: Row(

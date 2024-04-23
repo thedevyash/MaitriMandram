@@ -133,7 +133,7 @@ class _RecruiterDetailsScreenState extends State<RecruiterDetailsScreen> {
                                 height: height * 0.03,
                               ),
                               LoginField(
-                                  hint: "Enter Your Organisation's Name",
+                                  hint: "Enter Your Address",
                                   textEditingController:
                                       controller.companyNameController,
                                   isfilled: user),
@@ -141,17 +141,9 @@ class _RecruiterDetailsScreenState extends State<RecruiterDetailsScreen> {
                                 height: height * 0.018,
                               ),
                               LoginField(
-                                  hint: "Enter Your Organisation ID",
+                                  hint: "Enter Your Pincode",
                                   textEditingController:
                                       controller.organisationIDcontroller,
-                                  isfilled: user),
-                              SizedBox(
-                                height: height * 0.018,
-                              ),
-                              LoginField(
-                                  hint: "What Do You Do?",
-                                  textEditingController:
-                                      controller.roleController,
                                   isfilled: user),
                               SizedBox(
                                 height: height * 0.05,

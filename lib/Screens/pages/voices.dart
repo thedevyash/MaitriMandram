@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sehyogini_frontned/Screens/chatbot/chatScreen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class VoicesScreen extends StatefulWidget {
   const VoicesScreen({super.key});
@@ -32,7 +33,7 @@ class _VoicesScreenState extends State<VoicesScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 4,
+            height: 10,
           ),
           Container(
             decoration: BoxDecoration(
@@ -81,7 +82,7 @@ class _VoicesScreenState extends State<VoicesScreen> {
               padding: EdgeInsets.all(16.0),
               children: [
                 AppointmentCard(
-                  counselorName: 'Dr. John Doe',
+                  counselorName: 'Dr. Priyanka Sharma',
                   specialty: 'Depression & Anxiety',
                   availability: 'Available on Mon, Wed, Fri',
                   onTap: () {
@@ -90,7 +91,7 @@ class _VoicesScreenState extends State<VoicesScreen> {
                 ),
                 SizedBox(height: 16.0),
                 AppointmentCard(
-                  counselorName: 'Dr. Jane Smith',
+                  counselorName: 'Dr. Ananya Gupta',
                   specialty: 'Family Counseling',
                   availability: 'Available on Tue, Thu, Sat',
                   onTap: () {
@@ -99,7 +100,7 @@ class _VoicesScreenState extends State<VoicesScreen> {
                 ),
                 SizedBox(height: 16.0),
                 AppointmentCard(
-                  counselorName: 'Dr. Michael Johnson',
+                  counselorName: 'Dr. Aditi Jha',
                   specialty: 'Teen Counseling',
                   availability: 'Available on Mon, Wed, Fri',
                   onTap: () {
@@ -108,7 +109,7 @@ class _VoicesScreenState extends State<VoicesScreen> {
                 ),
                 SizedBox(height: 16.0),
                 AppointmentCard(
-                  counselorName: 'Dr. Emily Brown',
+                  counselorName: 'Dr. Ayushi Singh',
                   specialty: 'Relationship Counseling',
                   availability: 'Available on Tue, Thu, Sat',
                   onTap: () {
@@ -295,8 +296,12 @@ class _AppointmentDialogState extends State<AppointmentDialog> {
           ),
           SizedBox(height: 16.0),
           ElevatedButton(
-            onPressed: () {
+            onPressed: () async {
               // Implement booking logic
+              const url =
+                  'https://payments.coffeecodes.in/payments/0b579657-c332-4ec7-9550-f98b3c03d2b6';
+
+              await launchUrl(Uri.parse(url));
               Navigator.of(context).pop();
             },
             child: Text('Book'),

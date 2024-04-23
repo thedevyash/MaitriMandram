@@ -39,14 +39,12 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
-                "assets/images/onboard.svg",
-                height: height * 0.262,
+                "assets/maitri.svg",
+                height: height * 0.362,
               ),
-              SizedBox(
-                height: 10,
-              ),
-              // SvgPicture.asset("assets/images/sehyoginiDark.svg",
-              //     height: height * 0.07),
+              // SizedBox(
+              //   height: 10,
+              // ),
             ],
           ),
         ),
@@ -55,6 +53,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset(
               "assets/images/waves.png",
+              color: colors.pinkMain,
             )
           ],
         )

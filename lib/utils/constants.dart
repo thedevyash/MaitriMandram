@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sehyogini_frontned/Screens/Marketplace/market.dart';
 import 'package:sehyogini_frontned/Screens/pages/community.dart';
 import 'package:sehyogini_frontned/Screens/pages/myprofile.dart';
 import 'package:sehyogini_frontned/Screens/pages/opportunity.dart';
@@ -12,8 +13,8 @@ class colors {
   static const purpAcc = Color.fromRGBO(131, 103, 199, 1);
   static const purpLight = Color.fromRGBO(221, 219, 241, 1);
   static const black = Color.fromRGBO(19, 4, 1, 1);
-  static const pink = Color.fromRGBO(238, 66, 102, 1);
-  static const pinkMain = Color(0xffFF566A);
+  static const pink = Color(0xff1C53A3);
+  static const pinkMain = Color(0xff1C53A3);
   static const purpMain = Color(0xff8C5CB3);
   static const grey = Color.fromARGB(255, 241, 238, 238);
 }
@@ -37,6 +38,7 @@ List pages = [
   CommunityScreen(),
   VoicesScreen(),
   OpportunityScreen(),
+  MarketPlace(),
   MyProfile()
 ];
 

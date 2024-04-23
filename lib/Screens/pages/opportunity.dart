@@ -18,7 +18,7 @@ class OpportunityScreen extends StatefulWidget {
 
 class _OpportunityScreenState extends State<OpportunityScreen> {
   CustomTabBarController controller = CustomTabBarController();
-  List tabs = ["Opportunities", "Schemes", "Workshops"];
+  List tabs = ["Schemes", "Workshops"];
   late PageController _controller = PageController(initialPage: 0);
   @override
   void dispose() {
@@ -53,13 +53,13 @@ class _OpportunityScreenState extends State<OpportunityScreen> {
       body: Column(
         children: [
           CustomTabBar(
-            width: 350,
+            width: 200,
             tabBarController: controller,
             height: 50,
-            itemCount: 3,
+            itemCount: 2,
             builder: getTabbarChild,
             indicator: RoundIndicator(
-              color: Colors.red,
+              color: Color(0xff1C53A3),
               top: 8,
               bottom: 8,
               left: 1,
@@ -70,7 +70,7 @@ class _OpportunityScreenState extends State<OpportunityScreen> {
           ),
           Expanded(
               child: PageView(
-            children: [oppoScreen(), Schemes(), WorkshopScreen()],
+            children: [Schemes(), WorkshopScreen()],
             controller: _controller,
           ))
         ],
